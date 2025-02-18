@@ -1,6 +1,6 @@
 # Tweax - Real-Time Code Performance Optimizer
 
-![Tweax Logo](icon.png)
+![Tweax Logo](icon.jpg)
 
 Tweax is a **VS Code extension** that optimizes Python code in real time, providing performance improvements, complexity analysis, and suggestions. It integrates with a **Flask server** powered by the **Gemini API** to enhance code efficiency dynamically.
 
