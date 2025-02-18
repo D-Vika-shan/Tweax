@@ -46,7 +46,7 @@ code --install-extension tweax-0.0.1.vsix
 ### **1️⃣ Start the Flask Server**
 Ensure Python and Flask are installed, then run:
 ```sh
-python server.py
+python code_optimizer.py
 ```
 
 ### **2️⃣ Optimize Code in VS Code**
