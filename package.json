@@ -11,6 +11,7 @@
   ],
   "activationEvents": [],
   "main": "./dist/extension.js",
+  "icon": "icon.jpg",
   "contributes": {
     "commands": [
       {
