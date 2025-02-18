@@ -2,16 +2,30 @@ from flask import Flask, request, jsonify
 import google.generativeai as genai
 import time
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Get API key from .env
+GENAI_API_KEY = os.getenv("GENAI_API_KEY")
+
+if not GENAI_API_KEY:
+    raise ValueError("GENAI_API_KEY is missing. Please check your .env file.")
 
 # Set up Gemini API key
-genai.configure(api_key="AIzaSyCTT3yvUykioJKo9tMqZDB6VcdDQWCXfiE")
+genai.configure(api_key=GENAI_API_KEY)
 
 app = Flask(__name__)
 
 @app.route('/optimize', methods=['POST'])
 def suggest_optimization():
     code_snippet = request.json.get('code')
-    
+
+    # Ensure code is provided
+    if not code_snippet:
+        return jsonify({'error': 'No code provided.'}), 400
+
     # Request optimized code
     optimization_prompt = f"""
     Analyze the following Python code and suggest performance improvements.
@@ -80,4 +94,4 @@ def suggest_optimization():
     return jsonify({'error': 'Failed to generate a response due to timeout or quota limits.'})
 
 if __name__ == "__main__":
-    app.run(port=5000)
+    app.run(port=5000, debug=True)
