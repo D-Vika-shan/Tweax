@@ -53,7 +53,8 @@ python code_optimizer.py
 - Select a piece of Python code.
 - Right-click and choose **"Optimize Selection"**.
 - View the optimized version, complexity analysis, and performance scores.
-
+![sidebar screenshot](./images/sidebar.jpg)
+![sidebar screenshot](./images/sidebar2.jpg)
 ---
 
 ## 🛠 Configuration
